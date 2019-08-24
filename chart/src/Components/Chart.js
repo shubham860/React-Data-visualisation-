@@ -33,7 +33,7 @@ class Chart extends Component{
             }
           }}
         />
-
+      <hr/>
         <Line
           data={this.state.chartData}
           options={{
@@ -48,7 +48,7 @@ class Chart extends Component{
             }
           }}
         />
-
+      <hr/>
         <Pie
           data={this.state.chartData}
           options={{
@@ -63,6 +63,7 @@ class Chart extends Component{
             }
           }}
         />
+      <hr/>
         <Radar
           data={this.state.chartData}
           options={{
@@ -77,6 +78,7 @@ class Chart extends Component{
             }
           }}
         />
+      <hr/>
         <Polar
           data={this.state.chartData}
           options={{
