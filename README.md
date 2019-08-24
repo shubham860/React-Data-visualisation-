@@ -1,2 +1,2 @@
-# React-Data-visualisation-
+# React-Data-visualization
 Data Visulaisation using chartjs
