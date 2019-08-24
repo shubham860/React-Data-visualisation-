@@ -1,47 +1,98 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import React, {Component} from 'react';
+import {Bar, Line, Pie, Radar,Polar} from 'react-chartjs-2';
 
-class Chart extends React.Component {
-  constructor(){
-    super()
+class Chart extends Component{
+  constructor(props){
+    super(props);
     this.state = {
-      chardata : {
-        labels : ['Boston','Worcestor','Springfield','Lowell','Cambridge','New Bedford'],
-        datasets :[
-          {
-            label : 'Population',
-            data : [
-              617594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
-            ],
-            backgroundColor: [ 'blue','green','red','yellow','orange','pink' ]
-          }
-        ]
-      }
+      chartData:props.chartData
     }
   }
 
   static defaultProps = {
-    title : true,
-    legend : true,
-    position : 'right'
+    displayTitle:true,
+    displayLegend: true,
+    legendPosition:'right',
+    location:'City'
   }
 
-  render () {
-     return(
-       <Bar
-          data={this.state.chardata}
-          options={ {
-            maintainAspectRatio: false ,
-            title : {display:this.props.title, text:'Largest Cities In Massachusettes',fontSize:25}, legend : { display : this.props.legend, position : this.props.position}
-        } }
+  render(){
+    return (
+      <div className="chart">
+        <Bar
+          data={this.state.chartData}
+          options={{
+            title:{
+              display:this.props.displayTitle,
+              text:'Largest Cities In '+this.props.location,
+              fontSize:25
+            },
+            legend:{
+              display:this.props.displayLegend,
+              position:this.props.legendPosition
+            }
+          }}
         />
-     )
+
+        <Line
+          data={this.state.chartData}
+          options={{
+            title:{
+              display:this.props.displayTitle,
+              text:'Largest Cities In '+this.props.location,
+              fontSize:25
+            },
+            legend:{
+              display:this.props.displayLegend,
+              position:this.props.legendPosition
+            }
+          }}
+        />
+
+        <Pie
+          data={this.state.chartData}
+          options={{
+            title:{
+              display:this.props.displayTitle,
+              text:'Largest Cities In '+this.props.location,
+              fontSize:25
+            },
+            legend:{
+              display:this.props.displayLegend,
+              position:this.props.legendPosition
+            }
+          }}
+        />
+        <Radar
+          data={this.state.chartData}
+          options={{
+            title:{
+              display:this.props.displayTitle,
+              text:'Largest Cities In '+this.props.location,
+              fontSize:25
+            },
+            legend:{
+              display:this.props.displayLegend,
+              position:this.props.legendPosition
+            }
+          }}
+        />
+        <Polar
+          data={this.state.chartData}
+          options={{
+            title:{
+              display:this.props.displayTitle,
+              text:'Largest Cities In '+this.props.location,
+              fontSize:25
+            },
+            legend:{
+              display:this.props.displayLegend,
+              position:this.props.legendPosition
+            }
+          }}
+        />
+      </div>
+    )
   }
 }
 

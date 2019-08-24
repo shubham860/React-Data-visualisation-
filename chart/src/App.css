@@ -31,3 +31,9 @@
     transform: rotate(360deg);
   }
 }
+
+@media (min-width : 600px){
+  .chart{
+    padding : 30px 500px 0px 500px;
+  }
+}
